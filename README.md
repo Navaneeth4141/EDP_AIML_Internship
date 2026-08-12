@@ -35,7 +35,7 @@ Each week is maintained in its own folder with the relevant source code, dataset
 |   Week  | Learning Topic                                           | Weekly Deliverable                  |    Status   |
 | :-----: | :------------------------------------------------------- | :---------------------------------- | :---------: |
 |  Week 1 | Pandas Basics, Features & Labels                         | Load and Clean a Sample Dataset     | ✅ Completed |
-|  Week 2 | Linear Regression, Train/Test Split & Evaluation Metrics | Train First Regression Model        |  ⏳ Upcoming |
+|  Week 2 | Linear Regression, Train/Test Split & Evaluation Metrics | Train First Regression Model        | ✅ Completed |
 |  Week 3 | Text Preprocessing, TF-IDF & Naive Bayes                 | Build a Spam Classifier             |  ⏳ Upcoming |
 |  Week 4 | Transaction Categorization                               | Build Categorization Model          |  ⏳ Upcoming |
 |  Week 5 | Trend Visualization                                      | Add Spending Trend Charts           |  ⏳ Upcoming |
@@ -79,6 +79,53 @@ Week-1-Pandas-Basics/
 
 ---
 
+## Week 2 Overview
+
+### Linear Regression & Model Evaluation
+
+Week 2 focused on building the first Machine Learning regression model and understanding the basic workflow of training and evaluating a model.
+
+The main concepts covered were:
+
+* Linear Regression
+* Features and Target Variables
+* Train/Test Split
+* Model Training
+* Model Coefficient and Intercept
+* Predictions
+* Mean Absolute Error (MAE)
+* Mean Squared Error (MSE)
+* Root Mean Squared Error (RMSE)
+* R² Score
+* Regression Visualization
+
+### Weekly Deliverable
+
+**Train First Regression Model**
+
+A Salary Prediction Dataset was created and used to train a Linear Regression model that predicts salary based on years of experience.
+
+The dataset was divided into **80% training data and 20% testing data**. The trained model was evaluated using MAE, MSE, RMSE, and R².
+
+### Model Results
+
+| Metric |    Result |
+| :----- | --------: |
+| MAE    |    419.46 |
+| MSE    | 223215.72 |
+| RMSE   |    472.46 |
+| R²     |    0.9993 |
+
+The model achieved an R² score of **0.9993**, indicating that approximately **99.93% of the variation in salary** was explained by the model on the test dataset.
+
+Detailed implementation and documentation are available in:
+
+```text
+Week-2-Linear-Regression/
+```
+
+---
+
 ## Phase 1 – Foundations
 
 ### Weeks 1 – 3
@@ -98,11 +145,11 @@ Text Preprocessing + TF-IDF + Naive Bayes
 
 ### Foundation Deliverables
 
-| Week | Deliverable                     |
-| :--: | :------------------------------ |
-|   1  | Load and Clean a Sample Dataset |
-|   2  | Train First Regression Model    |
-|   3  | Build a Spam Classifier         |
+| Week | Deliverable                     | Status |
+| :--: | :------------------------------ | :----: |
+|   1  | Load and Clean a Sample Dataset |    ✅   |
+|   2  | Train First Regression Model    |    ✅   |
+|   3  | Build a Spam Classifier         |    ⏳   |
 
 ---
 
@@ -191,6 +238,11 @@ EDP-Internship/
 │   └── README.md
 │
 ├── Week-2-Linear-Regression/
+│   ├── dataset/
+│   ├── notebooks/
+│   ├── outputs/
+│   ├── src/
+│   ├── requirements.txt
 │   └── README.md
 │
 ├── Week-3-Spam-Classifier/
@@ -238,6 +290,8 @@ The technologies used will evolve throughout the internship as new concepts and 
 | :---------------- | :----------------------------------------- |
 | Python            | Primary programming language               |
 | Pandas            | Data manipulation and preprocessing        |
+| NumPy             | Numerical calculations                     |
+| Matplotlib        | Data visualization                         |
 | Jupyter Notebook  | Data analysis and experimentation          |
 | Scikit-learn      | Machine Learning algorithms and evaluation |
 | Git               | Version control                            |
@@ -258,6 +312,8 @@ The internship follows a practical progression:
 Machine Learning Foundations
             ↓
 Data Processing & Model Building
+            ↓
+Regression & Model Evaluation
             ↓
 Practical Project Development
             ↓
@@ -304,7 +360,7 @@ Example:
 
 ```text
 Week 1 → Completed Pandas data cleaning
-Week 2 → Added regression model
+Week 2 → Added Linear Regression model and evaluation
 Week 3 → Added spam classifier
 Week 4 → Added transaction categorization
 ...
@@ -328,12 +384,12 @@ By the end of the internship, the repository will contain:
 
 ---
 
-
 ## Author
 
 **T. Navaneeth Reddy**
 
 B.Tech – Information Technology
+
 Institute of Aeronautical Engineering
 
 **GitHub:** [Navaneeth4141](https://github.com/Navaneeth4141)

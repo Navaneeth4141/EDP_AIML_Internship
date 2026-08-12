@@ -1,0 +1,35 @@
+Linear Regression Model Evaluation
+==================================
+
+Dataset:
+Salary Prediction Dataset
+
+Feature:
+Years_of_Experience
+
+Target:
+Salary
+
+Model:
+Linear Regression
+
+Train/Test Split:
+80% Training
+20% Testing
+
+Model Equation:
+Salary = 9600.41 × Years_of_Experience + 27598.02
+
+Evaluation Metrics:
+-------------------
+
+MAE  : 419.46
+MSE  : 223215.72
+RMSE : 472.46
+R²   : 0.9993
+
+Interpretation:
+----------------
+The Linear Regression model achieved an R² score of 0.9993, indicating that the model explains approximately 99.93% of the variance in salary on the test dataset.
+
+The MAE of 419.46 indicates that the model's predictions differ from the actual salary values by approximately ₹419.46 on average.
