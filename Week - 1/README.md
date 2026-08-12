@@ -1,878 +1,496 @@
-\# Week 1 – Pandas Basics \& Data Cleaning
+<div align="center">
 
+# Week 1 – Pandas Basics & Data Cleaning
 
+**EDP Internship · Foundation Phase**
 
-A beginner-level data preprocessing project completed as part of the \*\*EDP Internship\*\*. This week's task focused on learning the fundamentals of \*\*Python Pandas\*\*, understanding \*\*features and labels\*\*, and performing basic data loading, exploration, and cleaning operations on a sample student performance dataset.
+A beginner-level data preprocessing assignment focused on learning **Pandas fundamentals**, understanding **features and labels**, and performing basic dataset exploration and cleaning.
 
+</div>
 
+---
 
-\---
+## Week 1 Overview
 
+| Item        | Details                              |
+| :---------- | :----------------------------------- |
+| Phase       | Foundation – Machine Learning Basics |
+| Week        | 1 of 12                              |
+| Topic       | Pandas Basics, Features & Labels     |
+| Deliverable | Load and Clean a Sample Dataset      |
+| Dataset     | Student Performance Dataset          |
+| Language    | Python                               |
+| Library     | Pandas                               |
+| Environment | Jupyter Notebook                     |
 
+### Objective
 
-\## 📌 Week 1 Objective
+The objective of Week 1 was to understand the fundamentals of working with datasets using Pandas and learn how raw data can be explored, cleaned, and prepared for future Machine Learning tasks.
 
-
-
-The objective of Week 1 was to build a basic understanding of data handling with Pandas and learn how raw datasets can be prepared before they are used for Machine Learning.
-
-
-
-The project covers the complete basic workflow:
-
-
-
-\*\*Load → Explore → Identify Problems → Clean → Verify → Save\*\*
-
-
-
-\---
-
-
-
-\## 📂 Project Structure
-
-
+The workflow followed in this assignment was:
 
 ```text
-
-Week-1-Pandas-Basics/
-
-│
-
-├── dataset/
-
-│   └── student\_data.csv
-
-│
-
-├── cleaned\_dataset/
-
-│   └── cleaned\_student\_data.csv
-
-│
-
-├── notebooks/
-
-│   └── Data\_Cleaning.ipynb
-
-│
-
-├── src/
-
-│   └── data\_cleaning.py
-
-│
-
-├── requirements.txt
-
-├── .gitignore
-
-└── README.md
-
+Load
+  ↓
+Explore
+  ↓
+Identify Problems
+  ↓
+Clean
+  ↓
+Verify
+  ↓
+Save
 ```
 
+---
 
+## Project Structure
 
-\---
+```text
+Week-1-Pandas-Basics/
+│
+├── dataset/
+│   └── student_data.csv
+│
+├── cleaned_dataset/
+│   └── cleaned_student_data.csv
+│
+├── notebooks/
+│   └── Data_Cleaning.ipynb
+│
+├── src/
+│   └── data_cleaning.py
+│
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
 
+---
 
+## Dataset
 
-\## 📊 Dataset
+A small **Student Performance Dataset** was created for this assignment to demonstrate fundamental data loading, exploration, and cleaning techniques.
 
+The original dataset contained **16 records and 7 columns**.
 
+### Dataset Attributes
 
-For this project, a small \*\*Student Performance Dataset\*\* was created to demonstrate fundamental data cleaning techniques.
+| Column             | Description                                 | Data Type |
+| :----------------- | :------------------------------------------ | :-------: |
+| `Student_ID`       | Unique identification number of the student |  Integer  |
+| `Name`             | Name of the student                         |    Text   |
+| `Gender`           | Gender of the student                       |    Text   |
+| `Attendance`       | Attendance percentage                       |  Integer  |
+| `Study_Hours`      | Average study hours                         |  Decimal  |
+| `Assignment_Score` | Assignment score                            |  Decimal  |
+| `Final_Score`      | Final examination score                     |  Integer  |
 
+---
 
+## Features & Labels
 
-The dataset contains \*\*16 records and 7 columns\*\* before cleaning.
+One of the fundamental Machine Learning concepts introduced during Week 1 was the distinction between **features** and **labels**.
 
-
-
-\### Dataset Attributes
-
-
-
-| Column             | Description                                 | Type    |
-
-| ------------------ | ------------------------------------------- | ------- |
-
-| `Student\_ID`       | Unique identification number of the student | Integer |
-
-| `Name`             | Name of the student                         | Text    |
-
-| `Gender`           | Gender of the student                       | Text    |
-
-| `Attendance`       | Attendance percentage                       | Integer |
-
-| `Study\_Hours`      | Average study hours                         | Decimal |
-
-| `Assignment\_Score` | Assignment score                            | Decimal |
-
-| `Final\_Score`      | Final examination score                     | Integer |
-
-
-
-\---
-
-
-
-\## 🎯 Features and Label
-
-
-
-An important concept introduced during Week 1 was the distinction between \*\*features\*\* and \*\*labels\*\*.
-
-
-
-\### Features
-
-
+### Features
 
 Features are the input variables that provide information to a Machine Learning model.
 
+For this dataset, the following columns can be considered features:
 
+* `Student_ID`
+* `Gender`
+* `Attendance`
+* `Study_Hours`
+* `Assignment_Score`
 
-For this dataset, examples of features are:
-
-
-
-\* Student ID
-
-\* Gender
-
-\* Attendance
-
-\* Study Hours
-
-\* Assignment Score
-
-
-
-\### Label
-
-
+### Label
 
 The label is the target variable that a Machine Learning model may be trained to predict.
 
+```text
+Final_Score → Label / Target
+```
 
+For example, in a future Machine Learning task, the student's other attributes could be used as inputs to predict their `Final_Score`.
 
-In this dataset:
+> **Note:** No Machine Learning model was trained during Week 1. Features and labels were introduced as foundational concepts for the upcoming weeks.
 
+---
 
+## Pandas Concepts Learned
 
-\*\*`Final\_Score` → Label / Target\*\*
+The following Pandas operations were practiced during this assignment:
 
+| Operation              | Purpose                                       |
+| :--------------------- | :-------------------------------------------- |
+| `pd.read_csv()`        | Load a CSV dataset                            |
+| `df.head()`            | Display the first few records                 |
+| `df.tail()`            | Display the last few records                  |
+| `df.shape`             | Determine the number of rows and columns      |
+| `df.columns`           | View column names                             |
+| `df.dtypes`            | Check data types                              |
+| `df.info()`            | Inspect dataset structure and non-null values |
+| `df.describe()`        | Generate statistical summaries                |
+| `df.isnull()`          | Identify missing values                       |
+| `df.isnull().sum()`    | Count missing values                          |
+| `df.fillna()`          | Replace missing values                        |
+| `df.mean()`            | Calculate the mean of numerical data          |
+| `df.duplicated()`      | Identify duplicate records                    |
+| `df.drop_duplicates()` | Remove duplicate records                      |
+| `df.to_csv()`          | Save the processed dataset                    |
 
+---
 
-For example, in a future Machine Learning task, the other student attributes could be used as inputs to predict the student's final score.
+# Dataset Exploration
 
-
-
-> Note: No Machine Learning model was trained in Week 1. Features and labels were introduced as a foundational Machine Learning concept.
-
-
-
-\---
-
-
-
-\## 🐼 Pandas Concepts Learned
-
-
-
-The following Pandas operations were practiced during this week:
-
-
-
-| Pandas Operation       | Purpose                                    |
-
-| ---------------------- | ------------------------------------------ |
-
-| `pd.read\_csv()`        | Load a CSV dataset                         |
-
-| `df.head()`            | Display the first few records              |
-
-| `df.tail()`            | Display the last few records               |
-
-| `df.shape`             | Find the number of rows and columns        |
-
-| `df.columns`           | View column names                          |
-
-| `df.dtypes`            | Check data types                           |
-
-| `df.info()`            | View dataset structure and non-null values |
-
-| `df.describe()`        | Generate statistical summaries             |
-
-| `df.isnull()`          | Identify missing values                    |
-
-| `df.isnull().sum()`    | Count missing values                       |
-
-| `df.fillna()`          | Replace missing values                     |
-
-| `df.mean()`            | Calculate the mean of numerical data       |
-
-| `df.duplicated()`      | Identify duplicate records                 |
-
-| `df.drop\_duplicates()` | Remove duplicate records                   |
-
-| `df.to\_csv()`          | Save the processed dataset                 |
-
-
-
-\---
-
-
-
-\## 🔍 Step 1 – Loading the Dataset
-
-
+## Loading the Dataset
 
 The dataset was loaded into a Pandas DataFrame using:
 
-
-
 ```python
-
 import pandas as pd
 
-
-
-df = pd.read\_csv("../dataset/student\_data.csv")
-
+df = pd.read_csv("../dataset/student_data.csv")
 ```
 
+A **DataFrame** is Pandas' primary two-dimensional data structure and represents data in rows and columns.
 
+---
 
-A \*\*DataFrame\*\* is the main two-dimensional data structure provided by Pandas and can be thought of as a table consisting of rows and columns.
+## Exploring the Dataset
 
+The following operations were used to understand the structure and characteristics of the dataset.
 
-
-\---
-
-
-
-\## 🔎 Step 2 – Exploring the Dataset
-
-
-
-Several Pandas functions were used to understand the dataset before performing any cleaning.
-
-
-
-\### View the Dataset
-
-
+### View Dataset
 
 ```python
-
 df
-
 ```
 
-
-
-\### First Five Records
-
-
+### View First Five Records
 
 ```python
-
 df.head()
-
 ```
 
-
-
-\### Last Five Records
-
-
+### View Last Five Records
 
 ```python
-
 df.tail()
-
 ```
 
-
-
-\### Dataset Dimensions
-
-
+### Check Dataset Dimensions
 
 ```python
-
 df.shape
-
 ```
-
-
 
 Initial dataset shape:
 
-
-
 ```text
-
 (16, 7)
-
 ```
 
+This represents:
 
+| Property | Value |
+| :------- | ----: |
+| Rows     |    16 |
+| Columns  |     7 |
 
-This means the dataset contained:
-
-
-
-\* \*\*16 rows\*\*
-
-\* \*\*7 columns\*\*
-
-
-
-\### Column Names
-
-
+### View Column Names
 
 ```python
-
 df.columns
-
 ```
 
-
-
-\### Data Types
-
-
+### Check Data Types
 
 ```python
-
 df.dtypes
-
 ```
 
-
-
-\### Dataset Information
-
-
+### View Dataset Information
 
 ```python
-
 df.info()
-
 ```
 
-
-
-\### Statistical Summary
-
-
+### Generate Statistical Summary
 
 ```python
-
 df.describe()
-
 ```
 
+These operations provided an initial understanding of the dataset structure, data types, missing values, and numerical characteristics.
 
+---
 
-These operations helped understand the structure, data types, missing values, and statistical characteristics of the dataset before cleaning.
+# Data Cleaning
 
+The original dataset contained intentional data quality issues so that common preprocessing techniques could be practiced.
 
+## Issues Identified
 
-\---
-
-
-
-\## 🧹 Step 3 – Data Cleaning
-
-
-
-The raw dataset contained intentional data quality issues so that basic preprocessing techniques could be practiced.
-
-
-
-\### Data Issues Identified
-
-
-
-| Issue            | Column             | Count |
-
-| ---------------- | ------------------ | ----: |
-
-| Missing value    | `Study\_Hours`      |     1 |
-
-| Missing value    | `Assignment\_Score` |     1 |
-
+| Issue            | Column / Record    | Count |
+| :--------------- | :----------------- | ----: |
+| Missing value    | `Study_Hours`      |     1 |
+| Missing value    | `Assignment_Score` |     1 |
 | Duplicate record | Complete row       |     1 |
 
+---
 
+## Handling Missing Values
 
-\---
-
-
-
-\## ❌ Handling Missing Values
-
-
-
-Missing values were identified using:
-
-
+Missing values were first identified using:
 
 ```python
-
 df.isnull()
-
 ```
 
-
-
-The total number of missing values in each column was then calculated using:
-
-
+The number of missing values in each column was then calculated using:
 
 ```python
-
 df.isnull().sum()
-
 ```
 
+The missing numerical values were handled using **mean imputation**, where each missing value was replaced with the mean of its respective column.
 
-
-The missing values were handled by replacing them with the \*\*mean of their respective numerical columns\*\*.
-
-
-
-\### Study Hours
-
-
+### Study Hours
 
 ```python
-
-df\["Study\_Hours"] = df\["Study\_Hours"].fillna(
-
-&#x20;   df\["Study\_Hours"].mean()
-
+df["Study_Hours"] = df["Study_Hours"].fillna(
+    df["Study_Hours"].mean()
 )
-
 ```
 
-
-
-\### Assignment Score
-
-
+### Assignment Score
 
 ```python
-
-df\["Assignment\_Score"] = df\["Assignment\_Score"].fillna(
-
-&#x20;   df\["Assignment\_Score"].mean()
-
+df["Assignment_Score"] = df["Assignment_Score"].fillna(
+    df["Assignment_Score"].mean()
 )
-
 ```
 
+After this operation, the dataset contained no missing values in these columns.
 
+---
 
-This ensured that the dataset no longer contained missing values in these columns.
-
-
-
-\---
-
-
-
-\## 🔁 Handling Duplicate Records
-
-
+## Handling Duplicate Records
 
 Duplicate records were identified using:
 
-
-
 ```python
-
 df.duplicated()
-
 ```
-
-
 
 The number of duplicate records was checked using:
 
-
-
 ```python
-
 df.duplicated().sum()
-
 ```
-
-
 
 One duplicate record was identified.
 
-
-
 The duplicate was removed using:
 
-
-
 ```python
-
-df = df.drop\_duplicates()
-
+df = df.drop_duplicates()
 ```
-
-
 
 The result was verified using:
 
-
-
 ```python
-
 df.duplicated().sum()
-
 ```
 
-
-
-After cleaning:
-
-
+The result after cleaning was:
 
 ```text
-
 0
-
 ```
 
+Therefore, no duplicate records remained.
 
+---
 
-duplicate records remained.
+# Final Dataset
 
+The dataset changed from:
 
+| Stage           | Rows | Columns |
+| :-------------- | ---: | ------: |
+| Before Cleaning |   16 |       7 |
+| After Cleaning  |   15 |       7 |
 
-\---
+### Final Data Quality
 
-
-
-\## ✅ Final Dataset
-
-
-
-The dataset originally contained:
-
-
-
-```text
-
-16 rows × 7 columns
-
-```
-
-
-
-After removing the duplicate record:
-
-
-
-```text
-
-15 rows × 7 columns
-
-```
-
-
-
-The final dataset contained:
-
-
-
-\* No missing values
-
-\* No duplicate records
-
-\* 15 valid student records
-
-\* 7 columns
-
-
+| Check             | Result |
+| :---------------- | :----: |
+| Missing values    |    0   |
+| Duplicate records |    0   |
+| Valid records     |   15   |
+| Columns           |    7   |
 
 The cleaned dataset was saved as:
 
-
-
 ```text
-
-cleaned\_student\_data.csv
-
+cleaned_student_data.csv
 ```
 
+inside the `cleaned_dataset/` directory.
 
+---
 
-\---
-
-
-
-\## 💾 Saving the Cleaned Dataset
-
-
+## Saving the Cleaned Dataset
 
 The cleaned DataFrame was exported using:
 
-
-
 ```python
-
-df.to\_csv(
-
-&#x20;   "../cleaned\_dataset/cleaned\_student\_data.csv",
-
-&#x20;   index=False
-
+df.to_csv(
+    "../cleaned_dataset/cleaned_student_data.csv",
+    index=False
 )
-
 ```
 
+The `index=False` parameter prevents Pandas from adding the DataFrame index as an unnecessary column in the exported CSV file.
 
+---
 
-The `index=False` parameter prevents Pandas from adding the DataFrame index as an unnecessary column in the output CSV file.
+# Implementation
 
+The complete assignment was implemented in two formats.
 
+| Implementation   | File                            | Purpose                              |
+| :--------------- | :------------------------------ | :----------------------------------- |
+| Jupyter Notebook | `notebooks/Data_Cleaning.ipynb` | Interactive exploration and learning |
+| Python Script    | `src/data_cleaning.py`          | Reusable data cleaning workflow      |
 
-\---
-
-
-
-\## 🐍 Python Script
-
-
-
-Along with the Jupyter Notebook implementation, the complete data cleaning workflow was also implemented as a Python script:
-
-
+### Data Processing Workflow
 
 ```text
-
-src/data\_cleaning.py
-
-```
-
-
-
-The script performs the complete process:
-
-
-
-```text
-
-Load Dataset
-
-&#x20;    ↓
-
+Student Dataset
+      ↓
+Load using Pandas
+      ↓
 Explore Dataset
-
-&#x20;    ↓
-
-Check Missing Values
-
-&#x20;    ↓
-
+      ↓
+Identify Missing Values
+      ↓
 Fill Missing Values
-
-&#x20;    ↓
-
-Detect Duplicates
-
-&#x20;    ↓
-
+      ↓
+Identify Duplicate Records
+      ↓
 Remove Duplicates
-
-&#x20;    ↓
-
-Save Cleaned Dataset
-
+      ↓
+Verify Data Quality
+      ↓
+Export Cleaned Dataset
 ```
 
+---
 
-
-This provides both an interactive \*\*Jupyter Notebook\*\* implementation and a reusable \*\*Python script\*\*.
-
-
-
-\---
-
-
-
-\## 📓 Jupyter Notebook
-
-
+## Jupyter Notebook
 
 The complete interactive implementation is available in:
 
-
-
 ```text
-
-notebooks/Data\_Cleaning.ipynb
-
+notebooks/Data_Cleaning.ipynb
 ```
 
+The notebook contains the step-by-step process of loading, exploring, cleaning, and verifying the dataset.
 
+---
 
-The notebook contains the step-by-step exploration and cleaning process along with the corresponding outputs.
+## Python Script
 
+The reusable implementation is available in:
 
+```text
+src/data_cleaning.py
+```
 
-\---
+The script performs the complete data processing workflow and generates the cleaned dataset.
 
+---
 
+## Technologies & Tools
 
-\## 🛠️ Technologies Used
+| Technology / Tool | Purpose                                     |
+| :---------------- | :------------------------------------------ |
+| Python            | Primary programming language                |
+| Pandas            | Data manipulation and cleaning              |
+| Jupyter Notebook  | Interactive development and experimentation |
+| Git               | Version control                             |
+| GitHub            | Repository management                       |
 
+---
 
+## Skills Learned
 
-| Technology       | Purpose                        |
+By completing Week 1, the following skills were developed:
 
-| ---------------- | ------------------------------ |
+* Understanding Pandas fundamentals
+* Working with Pandas DataFrames
+* Loading CSV datasets
+* Exploring dataset structure
+* Understanding rows and columns
+* Identifying numerical and categorical data
+* Understanding features and labels
+* Detecting missing values
+* Handling missing values using mean imputation
+* Detecting duplicate records
+* Removing duplicate records
+* Verifying cleaned data
+* Exporting processed datasets
+* Creating reusable Python data-processing scripts
+* Organizing a data science project
+* Using Git and GitHub for version control
 
-| Python           | Programming language           |
+---
 
-| Pandas           | Data manipulation and cleaning |
+## Key Learning
 
-| Jupyter Notebook | Interactive development        |
+The major takeaway from Week 1 was understanding that **data preprocessing is an essential step before applying Machine Learning algorithms**.
 
-| Git              | Version control                |
+Real-world datasets may contain missing values, duplicate records, and other data quality issues. Pandas provides simple and powerful tools for identifying and handling these problems.
 
-| GitHub           | Repository management          |
+The concepts learned in this assignment establish the foundation for the Machine Learning tasks that follow in the upcoming weeks.
 
+---
 
+## Week 1 Outcome
 
-\---
+The **Load and Clean a Sample Dataset** assignment was successfully completed.
 
+The raw Student Performance Dataset was:
 
+**Loaded → Explored → Cleaned → Verified → Exported**
 
-\## 📚 Skills Learned
+The final dataset contains **15 records and 7 columns**, with missing values and duplicate records successfully handled.
 
+This assignment establishes the data handling foundation required for the next stage of the internship: **training the first regression model in Week 2**.
 
+---
 
-During Week 1, the following skills were developed:
 
+## Author
 
-
-\* Understanding the basics of Pandas
-
-\* Creating and working with DataFrames
-
-\* Loading CSV datasets
-
-\* Exploring dataset structure
-
-\* Understanding rows and columns
-
-\* Identifying numerical and categorical data
-
-\* Understanding features and labels
-
-\* Detecting missing values
-
-\* Handling missing values using mean imputation
-
-\* Detecting duplicate records
-
-\* Removing duplicate records
-
-\* Verifying cleaned data
-
-\* Exporting cleaned datasets
-
-\* Creating reusable Python data-processing scripts
-
-\* Organizing a data science project
-
-\* Using Git and GitHub for version control
-
-
-
-\---
-
-
-
-\## 🧠 Key Learning
-
-
-
-The major learning from Week 1 was understanding that \*\*data preprocessing is an essential step before applying Machine Learning algorithms\*\*.
-
-
-
-Raw data may contain missing values, duplicate records, inconsistent information, or other quality issues. Pandas provides simple and powerful tools to identify and handle these problems efficiently.
-
-
-
-The workflow learned in this project forms the foundation for the Machine Learning concepts that will be implemented in the upcoming weeks.
-
-
-
-\---
-
-
-
-\## 📈 Week 1 Outcome
-
-
-
-At the end of Week 1, a raw student performance dataset was successfully loaded, explored, cleaned, verified, and exported into a separate cleaned dataset using Pandas.
-
-
-
-The project successfully demonstrates the basic data preprocessing workflow required before moving toward feature engineering and Machine Learning model development.
-
-
-
-\---
-
-
-
-\## 🔗 Part of EDP Internship
-
-
-
-This project is part of the \*\*EDP Internship\*\* and represents the work completed during \*\*Week 1\*\*.
-
-
-
-Future weeks will build upon the concepts learned here and gradually introduce more advanced Data Science and Machine Learning techniques.
-
-
-
-\---
-
-
-
-\## 👨‍💻 Author
-
-
-
-\*\*T. Navaneeth Reddy\*\*
-
-
+**T. Navaneeth Reddy**
 
 B.Tech – Information Technology
-
 Institute of Aeronautical Engineering
 
+**GitHub:** [Navaneeth4141](https://github.com/Navaneeth4141)
 
+---
 
-GitHub: \[Navaneeth4141](https://github.com/Navaneeth4141)
+<div align="center">
 
+### EDP Internship · Week 1
 
+**Learn • Implement • Analyze • Document**
 
+</div>
