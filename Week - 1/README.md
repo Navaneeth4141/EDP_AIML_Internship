@@ -71,7 +71,7 @@ Week-1-Pandas-Basics/
 
 ## Dataset
 
-A small **Student Performance Dataset** was created for this assignment to demonstrate fundamental data loading, exploration, and cleaning techniques.
+A small **Student Performance Dataset** was created for this assignment to demonstrate fundamental data loading, exploration, & cleaning techniques.
 
 The original dataset contained **16 records and 7 columns**.
 
