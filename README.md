@@ -36,7 +36,7 @@ Each week is maintained in its own folder with the relevant source code, dataset
 | :-----: | :------------------------------------------------------- | :---------------------------------- | :---------: |
 |  Week 1 | Pandas Basics, Features & Labels                         | Load and Clean a Sample Dataset     | ✅ Completed |
 |  Week 2 | Linear Regression, Train/Test Split & Evaluation Metrics | Train First Regression Model        | ✅ Completed |
-|  Week 3 | Text Preprocessing, TF-IDF & Naive Bayes                 | Build a Spam Classifier             |  ⏳ Upcoming |
+|  Week 3 | Text Preprocessing, TF-IDF & Naive Bayes                 | Build a Spam Classifier             | ✅ Completed |
 |  Week 4 | Transaction Categorization                               | Build Categorization Model          |  ⏳ Upcoming |
 |  Week 5 | Trend Visualization                                      | Add Spending Trend Charts           |  ⏳ Upcoming |
 |  Week 6 | LLM API Integration                                      | Add AI Saving Tips                  |  ⏳ Upcoming |
@@ -126,6 +126,58 @@ Week-2-Linear-Regression/
 
 ---
 
+## Week 3 Overview
+
+### Text Preprocessing, TF-IDF & Spam Classification
+
+Week 3 focused on understanding how text data can be cleaned, transformed into numerical features, and used to train a Machine Learning classification model.
+
+The main concepts covered were:
+
+* Text preprocessing and normalization
+* Handling emoticons and unnecessary symbols
+* Duplicate and normalized duplicate detection
+* Data validation and leakage checking
+* Train/Test Split
+* TF-IDF feature extraction
+* Unigrams and Bigrams
+* Multinomial Naive Bayes
+* Accuracy, Precision, Recall and F1-Score
+* Confusion Matrix
+* Error Analysis
+* Prediction Probability Analysis
+* Decision Threshold Optimization
+* Custom SMS Classification
+* Model Saving using Joblib
+* Model Loading and Reproducibility Verification
+
+### Weekly Deliverable
+
+**Build a Spam Classifier**
+
+The UCI SMS Spam Collection dataset was cleaned and preprocessed before being divided into training and testing data. TF-IDF was used to convert the SMS messages into numerical features, and a Multinomial Naive Bayes classifier was trained to distinguish between **ham** and **spam** messages.
+
+The final model used **43,856 TF-IDF features**, an n-gram range of **(1, 2)**, a Naive Bayes `alpha` value of **1.0**, and a decision threshold of **0.10**.
+
+### Model Results
+
+| Metric | Result |
+| :----- | -----: |
+| Accuracy | 97.18% |
+| Precision | 95.33% |
+| Recall | 80.95% |
+| F1-Score | 87.18% |
+
+The trained model was saved using Joblib and successfully reloaded and tested. The final reproducibility verification passed successfully.
+
+Detailed implementation and documentation are available in:
+
+```text
+Week-3-Spam-Classifier/
+```
+
+---
+
 ## Phase 1 – Foundations
 
 ### Weeks 1 – 3
@@ -149,7 +201,7 @@ Text Preprocessing + TF-IDF + Naive Bayes
 | :--: | :------------------------------ | :----: |
 |   1  | Load and Clean a Sample Dataset |    ✅   |
 |   2  | Train First Regression Model    |    ✅   |
-|   3  | Build a Spam Classifier         |    ⏳   |
+|   3  | Build a Spam Classifier         |    ✅   |
 
 ---
 
@@ -246,6 +298,10 @@ EDP-Internship/
 │   └── README.md
 │
 ├── Week-3-Spam-Classifier/
+│   ├── dataset/
+│   ├── models/
+│   ├── notebooks/
+│   ├── requirements.txt
 │   └── README.md
 │
 ├── Week-4-Transaction-Categorization/

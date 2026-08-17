@@ -1,0 +1,38 @@
+{
+    "project": "Week 3 - SMS Spam Classifier",
+    "dataset": {
+        "original_records": 5574,
+        "after_exact_deduplication": 5171,
+        "after_normalized_cleanup": 5131,
+        "training_samples": 4104,
+        "testing_samples": 1027,
+        "ham_messages": 4502,
+        "spam_messages": 629
+    },
+    "text_representation": {
+        "technique": "TF-IDF",
+        "ngram_range": "(1, 2)",
+        "feature_count": 43856
+    },
+    "classifier": {
+        "algorithm": "Multinomial Naive Bayes",
+        "alpha": 1.0,
+        "decision_threshold": 0.1
+    },
+    "performance": {
+        "accuracy": 0.9718,
+        "accuracy_percentage": 97.18,
+        "spam_precision": 0.9533,
+        "spam_precision_percentage": 95.33,
+        "spam_recall": 0.8095,
+        "spam_recall_percentage": 80.95,
+        "spam_f1_score": 0.8755,
+        "spam_f1_percentage": 87.55
+    },
+    "confusion_matrix": {
+        "true_ham": 896,
+        "false_spam": 5,
+        "false_ham": 24,
+        "true_spam": 102
+    }
+}

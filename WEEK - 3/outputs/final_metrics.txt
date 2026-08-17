@@ -1,0 +1,38 @@
+WEEK 3 - SMS SPAM CLASSIFIER
+============================================================
+
+DATASET
+------------------------------------------------------------
+Original records          : 5574
+After exact deduplication : 5171
+After normalized cleanup  : 5131
+Training samples          : 4104
+Testing samples           : 1027
+Ham messages              : 4502
+Spam messages             : 629
+
+TEXT REPRESENTATION
+------------------------------------------------------------
+Technique       : TF-IDF
+N-gram range    : (1, 2)
+Features        : 43856
+
+CLASSIFIER
+------------------------------------------------------------
+Algorithm       : Multinomial Naive Bayes
+Alpha           : 1.0
+Threshold       : 0.1
+
+FINAL TEST PERFORMANCE
+------------------------------------------------------------
+Accuracy        : 97.18%
+Spam Precision  : 95.33%
+Spam Recall     : 80.95%
+Spam F1-Score   : 87.55%
+
+CONFUSION MATRIX
+------------------------------------------------------------
+                Predicted
+                Ham   Spam
+Actual Ham       896     5
+Actual Spam       24   102
